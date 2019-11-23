@@ -1,3 +1,4 @@
+import config
 import mechanicalsoup
 from bs4 import BeautifulSoup
 import requests
@@ -28,6 +29,6 @@ client = Client("AC7c09234936d0a3e628ff95cb236f094e", "e95941bafd158537584bf2bdd
 message = "WEBREG: ICS 53 Spots Open!\n" + "Current status: " + str(enrolledCounts) + "/" + str(maxCounts) + "\nClass Code: 35590, 35591\nCheck for discussion sections" + "\nhttps://www.reg.uci.edu/registrar/soc/webreg.html"
 
 if (status == "OPEN"):
-  client.messages.create(to="+14159968939", 
-                        from_="+13475072147", 
+  client.messages.create(to=config._to, 
+                        from_=config._from, 
                         body=message)
