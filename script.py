@@ -25,7 +25,7 @@ status = str(td[15])[38:42]
 maxCounts = int(str(counts[0])[52:55])
 enrolledCounts = int(str(counts[1])[34:37])
 
-client = Client("AC7c09234936d0a3e628ff95cb236f094e", "e95941bafd158537584bf2bdd4027578")
+client = Client(config._accountSID, config._authToken)
 message = "WEBREG: ICS 53 Spots Open!\n" + "Current status: " + str(enrolledCounts) + "/" + str(maxCounts) + "\nClass Code: 35590, 35591\nCheck for discussion sections" + "\nhttps://www.reg.uci.edu/registrar/soc/webreg.html"
 
 if (status == "OPEN"):
