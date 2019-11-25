@@ -18,7 +18,6 @@ def searchClass(dept, courseNum, courseId):
 
   soup = browser.get_current_page()
   code = soup.find(string=courseId).find_parent('td')
-  # print(code)
   td = code.find_next_siblings('td')
   counts = td[7:9]
 
@@ -26,7 +25,7 @@ def searchClass(dept, courseNum, courseId):
   maxCounts = int(str(counts[0])[52:55])
   enrolledCounts = int(str(counts[1])[34:37])
 
-  message = "WEBREG: " + dept + " " + courseNum + " Spots Open!\n" + "Current status: " + str(enrolledCounts) + "/" + str(maxCounts) + "\nClass Code: " + courseId + "\nCheck for discussion sections" + "\nhttps://www.reg.uci.edu/registrar/soc/webreg.html"
+  message = "WEBREG: " + dept + " " + courseNum + " has spots open!\n" + "Current status: " + str(enrolledCounts) + "/" + str(maxCounts) + "\nClass Code: " + courseId + "\nCheck for discussion sections" + "\nhttps://www.reg.uci.edu/registrar/soc/webreg.html"
 
   if (status == "OPEN"):
     for num in config._to:
